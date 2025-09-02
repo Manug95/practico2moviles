@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Practico 2</string>
+    <string name="tvLabelTituloLibro">Título:</string>
+    <string name="tvLabelAutor">Autor:</string>
+    <string name="tvLabelAnio">Año:</string>
+    <string name="tvLabelPaginas">Páginas:</string>
+    <string name="tvLabelGeneros">Géneros:</string>
+    <string name="tvLabelDescripcion">Descripción:</string>"
+    <string name="btnVolver">Volver</string>
+</resources>
