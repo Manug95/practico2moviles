@@ -16,6 +16,7 @@ import java.util.List;
 public class MainActivityViewModel extends AndroidViewModel {
     private List<Libro> libros;
     private MutableLiveData<Libro> mutableLibro;
+    private MutableLiveData<String> mutableMensaje;
     public MainActivityViewModel(@NonNull Application application) {
         super(application);
         libros = new ArrayList<>();
@@ -45,6 +46,13 @@ public class MainActivityViewModel extends AndroidViewModel {
         return mutableLibro;
     }
 
+    public LiveData<String> getMutableMensaje() {
+        if (mutableMensaje == null) {
+            mutableMensaje = new MutableLiveData<>();
+        }
+        return mutableMensaje;
+    }
+
     public void buscarLibro(String titulo) {
         if (titulo != null) {
             //metodo para buscar el libro
@@ -55,7 +63,7 @@ public class MainActivityViewModel extends AndroidViewModel {
                 }
 
             }
-            mutableLibro.setValue(null);
+            mutableMensaje.setValue("No se encontró el libro");
         }
     }
 

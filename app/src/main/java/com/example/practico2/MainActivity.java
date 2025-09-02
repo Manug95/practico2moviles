@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         viewModel.getMutableTitulo().observe(this, libro -> {
             binding.tvMensaje.setText("");
-            if (libro != null) {
-                Intent intent = new Intent(this, DetalleActivity.class);
-                intent.putExtra("libro", libro);
-                startActivity(intent);
-            } else {
-                binding.tvMensaje.setText("No se encontró el libro");
-            }
+            Intent intent = new Intent(this, DetalleActivity.class);
+            intent.putExtra("libro", libro);
+            startActivity(intent);
+        });
+
+        viewModel.getMutableMensaje().observe(this, mensaje -> {
+            binding.tvMensaje.setText(mensaje);
         });
 
         binding.btnBuscar.setOnClickListener(view -> {
